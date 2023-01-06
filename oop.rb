@@ -2,21 +2,19 @@
 # it should have a dynamic name attribute
 # it should have a color attribute, that is silver by default
 # it should have a method called "say" that returns whatever string is passed in, with "*~*" at the beginning and end of the string
-class Unicorn
-    def initialize(name,string)
-        @name = name
-        @color = "silver"
-        @string = string
-    end
+# class Unicorn
+#     def initialize(name)
+#         @name = name
+#         @color = "silver"
+#     end
 
-    def say 
-        "*~*#{@string}*~*"
-    end
-end
+#     def say (string)
+#         "*~*#{string}*~*"
+#     end
+# end
 
-p uni1 = Unicorn.new("Kyle","Hello")
-p uni1
-p uni1.say 
+# p uni1 = Unicorn.new("Kyle")
+# p uni1.say("howdy") 
 
 
 
@@ -27,8 +25,49 @@ p uni1.say
 #  it should have a thirsty attribute, that is true by default
 #  it should have a drink method. When called, the thirsty attribute changes to false
 
+# class Vampire
+#     def initialize(name, pet="bat")
+#         @name = name
+#         @pet = pet
+#         @thirsty = true
+#     end
+
+#     def drink
+#         @thirsty = false
+#     end
+# end    
+
+# vamp1 = Vampire.new("Vlad")
+# p vamp1.drink
+
 
 #  Write a Dragon class
+class Dragon
+    attr_reader :is_hungry
+    def initialize(name,rider,color)
+            @name =name
+            @rider = rider
+            @color = color
+            @is_hungry = true
+            @count = 0
+    end
+    def eat
+        if @count >=4
+            @is_hungry = false
+        end
+    end
+end
+
+drag1 = Dragon.new("Joe", "Alec","green")
+drag1.eat
+p drag1.is_hungry
+drag1.eat
+drag1.eat
+drag1.eat
+p drag1.is_hungry
+
+
+
 #  it should have a dynamic name attribute (string)
 #  it should have a dynamic rider attribute (string)
 #  it should have a dynamic color attribute (string)
